@@ -16,7 +16,7 @@ Acima de tudo esse projeto servirá como uma testemunha do seu próprio processo
 
 - Todas as ferramentas que operarem sobre as notas devem se apoiar em uma abordagem centralizada pensando em um cenário onde estarão muito provavelmente todas juntas operando diferentes seções da mesma caixa de notas.
 - Em um cenário de chatOps, a gerência financeira poderia acontecer ao lado da gerência de agenda (notas do Obsidian refletindo o calendário do google).
-- É natural que coisas como as operações de dados, salvamento e sem falar do gerenciamento do git (opcional) serão centralizadas para fácil reuso e evitar race conditions.
+- É natural que coisas como as operações de dados, salvamento e sem falar do gerenciamento do git (opcional) serão centralizadas para fácil reuso e evitar race conditions. Para isso, utilizaremos o **[Loam](https://github.com/aretw0/loam)**, que atua como um driver NoSQL para Markdown + Git, garantindo atomicidade e simplificando a persistência.
 
 ### Público-alvo
 
@@ -50,12 +50,14 @@ Seguiremos uma abordagem incremental para evitar *over-engineering*:
 
 4. Definir estrutura de dados das notas do Obsidian.
 
+5. Validar o uso do **Loam** como engine de armazenamento (instalação e operações básicas via CLI/Library).
+
 ### 2. SDD - Specification Driven Development (Simplificado)
 
 Evitar a "burocracia de documentação". Focaremos em poucos arquivos vivos em `/docs`:
 
 - `PRODUCT.md`: Visão, Personas e User Stories (O "Porquê" e "Para Quem").
-- `TECHNICAL.md`: Arquitetura, Decisões de Design (Dados -> Obsidian) e Stack.
+- `TECHNICAL.md`: Arquitetura (Loam como engine), Decisões de Design (Dados -> Obsidian) e Stack.
 - `PLANNING.md`: Roadmap, Backlog e Tarefas imediatas.
 
 *Na raiz:*
