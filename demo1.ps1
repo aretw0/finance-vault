@@ -1,6 +1,3 @@
-
-New-Item -ItemType Directory -Force -Path $VaultDir | Out-Null
-
 Write-Host "--- 1. Initializing Vault ---" -ForegroundColor Cyan
 loam init . --nover
 
