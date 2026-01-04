@@ -2,6 +2,8 @@
 
 > **"File over App"**: Sua vida financeira em texto plano, auditável e sob seu controle.
 
+[![License](https://img.shields.io/github/license/aretw0/finance-vault.svg)](LICENSE)
+
 O **Finance Vault** é um ecossistema de ferramentas modulares projetado para ingerir, processar e armazenar transações financeiras em notas Markdown (Obsidian) com frontmatter estruturado. Ele segue a **Filosofia Unix**: cada componente faz uma única coisa bem feita, conectados por pipelines.
 
 ## 🌟 Destaques
@@ -65,6 +67,3 @@ Isso criará arquivos em: `vault/pessoal/joao/2025/05/UUID.md`.
 ## 🤝 Contribuindo
 
 Verifique o [Roadmap](docs/PLANNING.md) para ver as próximas tarefas. Pull Requests para novos adaptadores são bem-vindos!
-
----
-*License: MIT*
