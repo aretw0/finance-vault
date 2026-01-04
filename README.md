@@ -68,8 +68,9 @@ Isso criará arquivos em: `vault/pessoal/joao/2025/05/UUID.md`.
 
 Explore o diretório `showcase/` para ver exemplos prontos de visualização:
 
+- **`Dashboard.md`**: Painel nativo usando *Embedded Queries* (Zero plugins).
+- **`Dashboard_Canvas.canvas`**: Um quadro visual organizando metas e dados.
 - **`Dashboard_Dataview.md`**: Um painel com somatórios e tabelas dinâmicas (Requer plugin Dataview).
-- **`Dashboard_Native.canvas`**: Um quadro visual organizando metas e dados.
 - **`transactions/`**: Exemplos de notas transacionais com frontmatter completo.
 
 ## 🤝 Contribuindo
