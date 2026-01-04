@@ -2,4 +2,7 @@ data/
 .loam/
 output/
 verify_vault/
+
+# Obsidian Showcase
 showcase/.obsidian/plugins/
+showcase/.obsidian/workspace.json
