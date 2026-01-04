@@ -4,26 +4,35 @@ Este documento rastreia o progresso do projeto `finance-vault`, desde a fase de 
 
 ## Roadmap
 
-### Fase 0: Spike (Atual)
+### Fase 0: Spike (Concluído)
 
 **Objetivo:** Validar a viabilidade técnica e definir as bases.
 
-- [ ] Analisar arquivos de dados (OFX, CSV, PDF).
-- [ ] Definir estratégia de conversão (Bancos -> Obsidian).
-- [ ] Validar **Loam** como engine de armazenamento.
+- [x] Analisar arquivos de dados (OFX, CSV, PDF).
+- [x] Definir estratégia de conversão (Bancos -> Obsidian).
+- [x] Validar **Loam** como engine de armazenamento.
+
+### Fase 0.5: Refinamento & Documentação (Atual)
+
+**Objetivo:** Formalizar a arquitetura e "limpar a casa" antes da implementação robusta.
+
+- [x] Documentação Essencial (`PRODUCT.md`, `TECHNICAL.md`).
+- [x] Refatoração do Spike para Arquitetura de Pipeline.
+- [x] Implementação do Adaptador Nubank V1.
 
 ### Fase 1: SDD (Especificação)
 
-**Objetivo:** Formalizar o produto e a arquitetura.
+**Objetivo:** Expansão e Casos de Uso Avançados.
 
-- [ ] Detalhar `PRODUCT.md` (Personas, User Stories).
-- [ ] Detalhar `TECHNICAL.md` (Design de dados, Arquitetura).
+- [ ] Detalhar User Stories avançadas.
+- [ ] Design de Relatórios.
 
 ### Fase 2: Ambiente
 
 **Objetivo:** Garantir reprodutibilidade.
 
 - [ ] Configurar Dev Container.
+- [ ] Validar compatibilidade Linux (CI/CD).
 
 ### Fase 3: Qualidade
 
@@ -31,7 +40,7 @@ Este documento rastreia o progresso do projeto `finance-vault`, desde a fase de 
 
 - [ ] Implementar testes BDD/TDD.
 
-## Backlog (Fase 0)
+## Backlog
 
 1. **Análise de Dados**
    - [ ] Inspecionar `data/NU_*.ofx` e identificar campos relevantes.
