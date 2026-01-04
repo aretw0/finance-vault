@@ -1,0 +1,10 @@
+filters:
+  or:
+    - file.tags.contains("finance")
+    - file.folder == "transactions"
+views:
+  - type: table
+    name: Tabela
+    order:
+      - file.name
+      - amount
