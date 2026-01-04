@@ -2,23 +2,26 @@
 
 > [!TIP]
 > This dashboard uses only **Core Plugins** (Search).
+> If these queries return "Nothing Found", check if the folder path matches your Vault structure.
 
 ## 🔎 Recent Transactions
 
 ### Income
 
-Strategy: Finds lines with "amount:" and **excludes** lines with "amount: -" (negative).
+Finds files containing "amount:" followed by a digit.
+Uses `file:` (content) search instead of `line:` for robustness.
+Removes `path:` restriction to ensure it finds files regardless of Vault root.
 
 ```query
-path:transactions line:"amount:" -line:"amount: -" sort:date desc
+file:"amount:" file:/[0-9]/ -file:"amount: -" sort:date desc
 ```
 
 ### Expenses
 
-Strategy: Finds lines explicitly containing "amount: -".
+Finds files explicitly containing "amount: -".
 
 ```query
-path:transactions line:"amount: -" sort:date desc
+file:"amount: -" sort:date desc
 ```
 
 ## 🏷️ By Tag
@@ -26,5 +29,5 @@ path:transactions line:"amount: -" sort:date desc
 ### Nubank
 
 ```query
-path:transactions tag:#nubank
+tag:#nubank
 ```
