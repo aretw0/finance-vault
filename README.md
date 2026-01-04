@@ -48,7 +48,7 @@ loam init . # Inicializa o vault local
 
 O fluxo padrão envolve invocar um **Adaptador** e passar o resultado para o **Loader** (`Save-ToVault`).
 
-**Exemplo: Importando Nubank**
+#### Exemplo: Importando Nubank
 
 ```powershell
 # Sintaxe: Adapter | Loader
