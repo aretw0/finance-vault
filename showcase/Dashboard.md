@@ -1,24 +1,24 @@
 # Finance Dashboard (Native)
 
 > [!TIP]
-> This dashboard uses only **Core Plugins** (Search & Backlinks). No community plugins required.
+> This dashboard uses only **Core Plugins** (Search).
 
 ## 🔎 Recent Transactions
 
 ### Income (Search Query)
 
-Matches lines like `amount: 2500` but explicitly excludes lines with `amount: -`.
+Uses standard text search to find positive amounts. Matches `amount:` followed by a digit.
 
 ```query
-path:"transactions" line:(/amount:\s*[0-9]/) -line:(/amount:\s*-/) sort:date desc
+path:"transactions" /amount: [0-9]/ sort:date desc
 ```
 
 ### Expenses (Search Query)
 
-Matches lines like `amount: -150`.
+Uses standard text search to find negative amounts. Matches `amount:` followed by `-`.
 
 ```query
-path:"transactions" line:(/amount:\s*-/) sort:date desc
+path:"transactions" "amount: -" sort:date desc
 ```
 
 ## 🏷️ By Tag
