@@ -7,18 +7,18 @@
 
 ### Income
 
-Finds lines containing "amount:" AND a digit (0-9), excluding lines with a minus sign "-".
+Finds lines starting with `amount:` followed by a positive number (digit). Uses regex `line:` operator.
 
 ```query
-path:transactions content:"amount:" content:/[0-9]/ -content:"-"
+path:transactions line:(/^amount:\s*[0-9]/) sort:date desc
 ```
 
 ### Expenses
 
-Finds lines containing "amount:" AND a minus sign "-".
+Finds lines starting with `amount:` followed by a minus sign. Uses regex `line:` operator.
 
 ```query
-path:transactions content:"amount:" content:"-"
+path:transactions line:(/^amount:\s*-/) sort:date desc
 ```
 
 ## 🏷️ By Tag
