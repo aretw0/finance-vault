@@ -64,8 +64,6 @@ Isso criará arquivos em: `vault/pessoal/joao/2025/05/UUID.md`.
 - `docs/`: Documentação de arquitetura e planejamento.
 - `verify_pipeline.ps1`: Script de verificação E2E.
 
-- `verify_pipeline.ps1`: Script de verificação E2E.
-
 ## 🎨 Live Showcase
 
 Explore o diretório `showcase/` para ver exemplos prontos de visualização:

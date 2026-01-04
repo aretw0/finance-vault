@@ -6,7 +6,7 @@
 ## Financial Summary
 
 ```dataviewjs
-const pages = dv.pages('"showcase/transactions"');
+const pages = dv.pages('"transactions"');
 const income = pages.where(p => p.amount > 0).amount.array().reduce((a, b) => a + b, 0);
 const expenses = pages.where(p => p.amount < 0).amount.array().reduce((a, b) => a + b, 0);
 const balance = income + expenses;
@@ -24,7 +24,7 @@ dv.paragraph(`
 
 ```dataview
 TABLE date as Date, amount as Amount, description as Description, category as Category
-FROM "showcase/transactions"
+FROM "transactions"
 SORT date DESC
 LIMIT 10
 ```
