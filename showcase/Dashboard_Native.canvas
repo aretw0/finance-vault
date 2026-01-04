@@ -1,0 +1,32 @@
+{
+	"nodes": [
+		{
+			"id": "node1",
+			"x": -200,
+			"y": -200,
+			"width": 500,
+			"height": 400,
+			"type": "file",
+			"file": "showcase/Dashboard_Dataview.md"
+		},
+		{
+			"id": "node2",
+			"x": 350,
+			"y": -200,
+			"width": 300,
+			"height": 200,
+			"type": "text",
+			"text": "# Goals 🎯\n\n- Save R$ 10.000\n- Reduce Food Costs\n- Visualize Data"
+		},
+		{
+			"id": "node3",
+			"x": 350,
+			"y": 50,
+			"width": 300,
+			"height": 150,
+			"type": "text",
+			"text": "## Pipeline Status\n\n- ✅ Nubank Adapter\n- ✅ Multi-Tenant Support\n- 🔄 Visualizations"
+		}
+	],
+	"edges": []
+}
