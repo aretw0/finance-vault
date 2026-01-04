@@ -64,6 +64,16 @@ Isso criará arquivos em: `vault/pessoal/joao/2025/05/UUID.md`.
 - `docs/`: Documentação de arquitetura e planejamento.
 - `verify_pipeline.ps1`: Script de verificação E2E.
 
+- `verify_pipeline.ps1`: Script de verificação E2E.
+
+## 🎨 Live Showcase
+
+Explore o diretório `showcase/` para ver exemplos prontos de visualização:
+
+- **`Dashboard_Dataview.md`**: Um painel com somatórios e tabelas dinâmicas (Requer plugin Dataview).
+- **`Dashboard_Native.canvas`**: Um quadro visual organizando metas e dados.
+- **`transactions/`**: Exemplos de notas transacionais com frontmatter completo.
+
 ## 🤝 Contribuindo
 
 Verifique o [Roadmap](docs/PLANNING.md) para ver as próximas tarefas. Pull Requests para novos adaptadores são bem-vindos!
