@@ -5,20 +5,20 @@
 
 ## 🔎 Recent Transactions
 
-### Income (Search Query)
+### Income
 
-Uses standard text search to find positive amounts. Matches `amount:` followed by a digit.
+Finds lines containing "amount:" AND a digit (0-9), excluding lines with a minus sign "-".
 
 ```query
-path:"transactions" /amount: [0-9]/ sort:date desc
+path:transactions content:"amount:" content:/[0-9]/ -content:"-"
 ```
 
-### Expenses (Search Query)
+### Expenses
 
-Uses standard text search to find negative amounts. Matches `amount:` followed by `-`.
+Finds lines containing "amount:" AND a minus sign "-".
 
 ```query
-path:"transactions" "amount: -" sort:date desc
+path:transactions content:"amount:" content:"-"
 ```
 
 ## 🏷️ By Tag
@@ -26,5 +26,5 @@ path:"transactions" "amount: -" sort:date desc
 ### Nubank
 
 ```query
-path:"transactions" tag:#nubank
+path:transactions tag:#nubank
 ```

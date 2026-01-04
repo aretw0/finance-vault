@@ -1,0 +1,18 @@
+name: Financial Board
+type: table
+source: "folder:transactions"
+filters: []
+sort:
+  - field: date
+    order: desc
+columns:
+  - field: date
+    width: 120
+  - field: description
+    width: 300
+  - field: amount
+    width: 100
+  - field: category
+    width: 150
+  - field: tags
+    width: 200

@@ -69,6 +69,7 @@ Isso criará arquivos em: `vault/pessoal/joao/2025/05/UUID.md`.
 Explore o diretório `showcase/` para ver exemplos prontos de visualização:
 
 - **`Dashboard.md`**: Painel nativo usando *Embedded Queries* (Zero plugins).
+- **`Financial.base`**: Tabela de dados nativa (novo recurso "Bases" do Obsidian 1.9+).
 - **`Dashboard_Canvas.canvas`**: Um quadro visual organizando metas e dados.
 - **`Dashboard_Dataview.md`**: Um painel com somatórios e tabelas dinâmicas (Requer plugin Dataview).
 - **`transactions/`**: Exemplos de notas transacionais com frontmatter completo.
