@@ -2,26 +2,24 @@
 
 > [!TIP]
 > This dashboard uses only **Core Plugins** (Search).
-> If these queries return "Nothing Found", check if the folder path matches your Vault structure.
+> It leverages **Properties Search** syntax (introduced in recent Obsidian versions) for precise numeric filtering.
 
 ## 🔎 Recent Transactions
 
 ### Income
 
-Finds files containing "amount:" followed by a digit.
-Uses `file:` (content) search instead of `line:` for robustness.
-Removes `path:` restriction to ensure it finds files regardless of Vault root.
+Finds notes where the `amount` property is **greater than 0**.
 
 ```query
-file:"amount:" file:/[0-9]/ -file:"amount: -" sort:date desc
+path:transactions [amount:>0]
 ```
 
 ### Expenses
 
-Finds files explicitly containing "amount: -".
+Finds notes where the `amount` property is **less than 0**.
 
 ```query
-file:"amount: -" sort:date desc
+path:transactions [amount:<0]
 ```
 
 ## 🏷️ By Tag
@@ -29,5 +27,5 @@ file:"amount: -" sort:date desc
 ### Nubank
 
 ```query
-tag:#nubank
+path:transactions tag:#nubank
 ```
