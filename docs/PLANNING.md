@@ -20,14 +20,23 @@ Este documento rastreia o progresso do projeto `finance-vault`, desde a fase de 
 - [x] Refatoração do Spike para Arquitetura de Pipeline.
 - [x] Implementação do Adaptador Nubank V1.
 
-### Fase 1: SDD (Especificação)
+### Fase 1.5: Showcase (Concluído)
 
-**Objetivo:** Expansão e Casos de Uso Avançados.
+**Objetivo:** Criar um ambiente de demonstração "Live".
 
-- [ ] Detalhar User Stories avançadas.
-- [ ] Design de Relatórios.
+- [x] Criar estrutura `showcase/`.
+- [x] Implementar Dashboards Nativos e Dataview.
+- [x] Pesquisa e Definição da Estratégia de "Context-Aware Dashboards" (TECHNICAL.md).
 
-### Fase 2: Ambiente
+### Fase 2: Evolução da Visualização
+
+**Objetivo:** Migrar de visualizações estáticas para dinâmicas.
+
+- [ ] **Templates de Dashboard**: Criar templates que usam `[ledger: nome]` automaticamente.
+- [ ] **Refatoração de Pastas**: Testar robustez movendo pastas e mantendo dashboards funcionando.
+- [ ] **Dataview Avançado**: Implementar relatórios financeiros complexos (Fluxo de Caixa Mensal).
+
+### Fase 3: Ambiente & Qualidade
 
 **Objetivo:** Garantir reprodutibilidade.
 
