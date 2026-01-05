@@ -1,6 +1,6 @@
 # Roadmap & Planning
 
-Este documento rastreia o progresso do projeto `finance-vault`, desde a fase de Spike até a maturação.
+Este documento rastreia o progresso do projeto `finance-vault`, definindo a estratégia de evolução.
 
 ## Roadmap
 
@@ -12,56 +12,44 @@ Este documento rastreia o progresso do projeto `finance-vault`, desde a fase de 
 - [x] Definir estratégia de conversão (Bancos -> Obsidian).
 - [x] Validar **Loam** como engine de armazenamento.
 
-### Fase 0.5: Refinamento & Documentação (Atual)
+### Fase 1: Arquitetura & Showcase (Concluído)
 
-**Objetivo:** Formalizar a arquitetura e "limpar a casa" antes da implementação robusta.
+**Objetivo:** Formalizar a arquitetura (Pipeline, Schema) e demonstrar valor imediato (Showcase).
 
 - [x] Documentação Essencial (`PRODUCT.md`, `TECHNICAL.md`).
 - [x] Refatoração do Spike para Arquitetura de Pipeline.
 - [x] Implementação do Adaptador Nubank V1.
+- [x] Criação do ambiente `showcase/` com Dashboards (Nativo, Canvas, Dataview).
 
-### Fase 1.5: Showcase (Concluído)
+### Fase 2: Visualização Avançada (Atual)
 
-**Objetivo:** Criar um ambiente de demonstração "Live".
+**Objetivo:** Evoluir dos dashboards estáticos para "Context-Aware Views" (ver `TECHNICAL.md`).
 
-- [x] Criar estrutura `showcase/`.
-- [x] Implementar Dashboards Nativos e Dataview.
-- [x] Pesquisa e Definição da Estratégia de "Context-Aware Dashboards" (TECHNICAL.md).
+- [ ] **Templates de Dashboard**: Criar templates que configuram filtros automaticamente (`[ledger: nome]`).
+- [ ] **Testes de Robustez**: Validar resiliência dos dashboards a mudanças de estrutura de pastas.
+- [ ] **Relatórios Avançados**: Implementar Fluxo de Caixa Mensal via DataviewJS.
 
-### Fase 2: Evolução da Visualização
+### Fase 3: Processo & Ambiente
 
-**Objetivo:** Migrar de visualizações estáticas para dinâmicas.
+**Objetivo:** Garantir robustez no desenvolvimento e uso (DevEx).
 
-- [ ] **Templates de Dashboard**: Criar templates que usam `[ledger: nome]` automaticamente.
-- [ ] **Refatoração de Pastas**: Testar robustez movendo pastas e mantendo dashboards funcionando.
-- [ ] **Dataview Avançado**: Implementar relatórios financeiros complexos (Fluxo de Caixa Mensal).
+- [ ] Configurar **Dev Container** para reprodutibilidade.
+- [ ] Implementar verificação Cross-Platform (Linux/CI).
+- [ ] Refinar User Stories para cenários complexos (Investimentos, Parcelamento).
 
-### Fase 3: Ambiente & Qualidade
+### Fase 4: Qualidade Total
 
-**Objetivo:** Garantir reprodutibilidade.
+**Objetivo:** Blindar o sistema contra regressões.
 
-- [ ] Configurar Dev Container.
-- [ ] Validar compatibilidade Linux (CI/CD).
-
-### Fase 3: Qualidade
-
-**Objetivo:** Garantir robustez.
-
-- [ ] Implementar testes BDD/TDD.
+- [ ] Implementar testes automatizados (BDD/TDD).
+- [ ] Validar performance com grande volume de dados.
 
 ## Backlog
 
-1. **Análise de Dados**
-   - [ ] Inspecionar `data/NU_*.ofx` e identificar campos relevantes.
-   - [ ] Inspecionar `data/NU_*.csv` e identificar campos relevantes.
-   - [ ] Inspecionar `data/sicoob_*.pdf` e avaliar complexidade de extração.
+### Análise de Dados (Pendente)
 
-2. **Definições do Obsidian**
-   - [ ] Pesquisar padrões de gerência financeira no Obsidian.
-   - [ ] Definir estrutura de pastas e frontmatter das notas.
+- [ ] Inspecionar `data/sicoob_*.pdf` e avaliar complexidade de extração.
 
-3. **Validação do Loam**
-   - [ ] Instalar CLI do Loam.
-   - [ ] Inicializar cofre de teste (`loam init`).
-   - [ ] Testar criação de notas (`loam write`).
-   - [ ] Testar listagem (`loam list`).
+### Definições do Obsidian (Pendente)
+
+- [ ] Pesquisar padrões de gerência financeira no Obsidian (Community Standards).
