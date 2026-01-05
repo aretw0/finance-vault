@@ -71,5 +71,43 @@ Para suportar múltiplos usuários e contextos (`ledger`), a estrutura de diret�
    - Usamos PowerShell porque ele trafega **Objetos** no pipe, não texto. Isso elimina a necessidade de `jq` ou regex complexo entre cada etapa do pipeline.
    - Um adaptador retorna um objeto `.NET`, o enricher manipula propriedades desse objeto, e o loader lê essas propriedades.
 
-2. **Loam como Driver**:
    - Não escrevemos arquivos `.md` manualmente. Delegamos ao `loam` para garantir que lockfiles, git operations e formatação sejam consistentes.
+
+## 🏗️ Camada de Visualização (Dashboards)
+
+> [!NOTE]
+> Evolução da Estratégia de Visualização: De **Pastas** para **Contextos**.
+
+### 1. O Problema da Estrutura Rígida
+
+Atualmente, dashboards dependem de caminhos físicos (`path:transactions`, `FROM "transactions"`).
+
+- **Fragilidade:** Se a pasta for renomeada ou movida, o dashboard quebra.
+- **Limitação:** Difícil criar visões transversais (ex: "Todas as despesas de 2024" independente do cofre/pasta).
+
+### 2. A Solução: Arquitetura Orientada a Propriedades
+
+A evolução natural é desacoplar a visualização do armazenamento físico. Dashboards devem filtrar por **Metadados (Properties)**, não por localização.
+
+#### Exemplo de Evolução
+
+| Nível | Abordagem | Exemplo de Query | Prós/Contras |
+| :--- | :--- | :--- | :--- |
+| **1. Estático** | Path-based | `path:"finance"` | ✅ Simples<br>❌ Quebra se mover pasta |
+| **2. Semântico** | Tag-based | `tag:#finance` | ✅ Flexível<br>❌ Polui lista de tags |
+| **3. Contextual** | Property-based | `[ledger: personal]` | ✅ Robusto, Escalonável<br>✅ Permite múltiplos contextos de visualização |
+
+### 3. Visão de Futuro: Dashboards Dinâmicos
+
+Para atender a gestão financeira completa, a evolução deve seguir para **Templates de Dashboard Contextuais**.
+
+1. **Dashboard "Master"**: Um arquivo que agrega métricas de todo o vault usando `[ledger: *]`.
+2. **Dashboards de Contexto**: Arquivos criados via template que já vêm com o filtro pré-configurado.
+    - *Exemplo:* Ao criar um "Dashboard Pessoal", o template insere queries com filtragem automática `[ledger: personal]`.
+
+### 4. Tecnologias de Visualização
+
+- **Nativo (Core Search)**: Para listas rápidas e operacionais ("Últimas transações"). Query recomendada: `[amount:>0]`.
+- **Dataview**: Para agregações financeiras ("Soma total", "Balanço", "Média mensal").
+- **Canvas**: Para planejamento estratégico e visão macro.
+- **Bases (Obsidian 1.9+)**: Para gestão de dados (EDIÇÃO em massa, classificação). A interface definitiva para manutenção.
