@@ -4,7 +4,69 @@ filters:
     - file.folder == "transactions"
 views:
   - type: table
-    name: Tabela
+    name: All
     order:
       - file.name
       - amount
+      - tags
+      - currency
+      - category
+      - account
+      - date
+      - description
+      - ledger
+      - owner
+  - type: table
+    name: Mercado
+    filters:
+      and:
+        - file.tags.contains("mercado")
+    order:
+      - file.name
+      - tags
+      - owner
+      - ledger
+      - description
+      - date
+      - currency
+      - category
+      - amount
+      - account
+    columnSize:
+      note.tags: 153
+      note.owner: 121
+      note.ledger: 92
+      note.description: 118
+  - type: table
+    name: Salario
+    filters:
+      and:
+        - file.tags.contains("salario")
+    order:
+      - file.name
+      - tags
+      - owner
+      - ledger
+      - description
+      - date
+      - currency
+      - category
+      - amount
+      - account
+  - type: cards
+    name: Internet
+    filters:
+      and:
+        - file.tags.contains("internet")
+    order:
+      - file.name
+      - tags
+      - owner
+      - ledger
+      - id
+      - description
+      - date
+      - category
+      - currency
+      - amount
+      - account
