@@ -1,55 +1,59 @@
 # Roadmap & Planning
 
-Este documento rastreia o progresso do projeto `finance-vault`, definindo a estratégia de evolução.
+Este documento guia a evolução do **Finance Vault**, focando na entrega de valor ao Steward (o usuário).
 
 ## Roadmap
 
 ### Fase 0: Spike (Concluído)
 
-**Objetivo:** Validar a viabilidade técnica e definir as bases.
+*O nascimento do sistema.*
 
-- [x] Analisar arquivos de dados (OFX, CSV, PDF).
-- [x] Definir estratégia de conversão (Bancos -> Obsidian).
-- [x] Validar **Loam** como engine de armazenamento.
+- [x] Validar parser de CSV/PDF.
+- [x] Estabelecer Loam como engine.
+- [x] Criar primeiros adaptadores.
 
 ### Fase 1: Arquitetura & Showcase (Concluído)
 
-**Objetivo:** Formalizar a arquitetura (Pipeline, Schema) e demonstrar valor imediato (Showcase).
+*A prova de conceito.*
 
-- [x] Documentação Essencial (`PRODUCT.md`, `TECHNICAL.md`).
-- [x] Refatoração do Spike para Arquitetura de Pipeline.
-- [x] Implementação do Adaptador Nubank V1.
-- [x] Criação do ambiente `showcase/` com Dashboards (Nativo, Canvas, Dataview).
+- [x] Pipeline Unix funcional.
+- [x] Schema Canônico V1.
+- [x] Showcase inicial com Dashboards estáticos.
 
-### Fase 2: Visualização Avançada (Atual)
+### Fase 2: Stewardship & Experience (Atual)
 
-**Objetivo:** Evoluir dos dashboards estáticos para "Context-Aware Views" (ver `TECHNICAL.md`).
+**Objetivo:** Transformar o "uso de scripts" em uma experiência de "Jardinagem Digital" segura e recompensadora.
+*Foco: StewEx (Steward Experience), Investimentos e Metas.*
 
-- [ ] **Templates de Dashboard**: Criar templates que configuram filtros automaticamente (`[ledger: nome]`).
-- [ ] **Testes de Robustez**: Validar resiliência dos dashboards a mudanças de estrutura de pastas.
-- [ ] **Relatórios Avançados**: Implementar Fluxo de Caixa Mensal via DataviewJS.
+#### 2.1. O Contrato de Input (StewEx)
 
-### Fase 3: Processo & Ambiente
+- [ ] **Erros Humanos:** Melhorar logs do Pipeline. O erro deve dizer "Coluna X faltando no arquivo Y" e não "Null Reference Exception".
+- [ ] **Idempotência Real:** Garantir que rodar o mesmo arquivo 10x não gere duplicatas nem sujeira.
+- [ ] **Verificação de Saúde:** Script `verify_vault.ps1` que checa integridade dos links e schemas.
 
-**Objetivo:** Garantir robustez no desenvolvimento e uso (DevEx).
+#### 2.2. Domínio: Investimentos (Novo Pilar)
 
-- [ ] Configurar **Dev Container** para reprodutibilidade.
-- [ ] Implementar verificação Cross-Platform (Linux/CI).
-- [ ] Refinar User Stories para cenários complexos (Investimentos, Parcelamento).
+- [ ] **Schema Definition:** Formalizar o JSON de Ativos (Ações, Fundos, Tesouro).
+- [ ] **Adapter B3/CEI:** Criar importador para área logada da B3 (ou CSVs de corretoras).
+- [ ] **Enricher de Cotação:** Script opcional que busca preço atual (Yahoo Finance/API).
+- [ ] **View:** Dashboard de Patrimônio Líquido.
+
+#### 2.3. Domínio: Metas (O Propósito)
+
+- [ ] **Schema Definition:** Objetivos Financeiros (Target Amount, Due Date).
+- [ ] **Vinculação:** Lógica para dizer "Esta conta Nubank alimenta a Meta Viagem".
+- [ ] **View:** Barra de Progresso de Metas.
+
+### Fase 3: Visualização "Context-Aware" (Próximo)
+
+**Objetivo:** Dashboards que se montam sozinhos.
+
+- [ ] **Templates Dinâmicos:** Usar `[shards.ledger: "pessoal"]` para criar visões automáticas.
+- [ ] **Relatórios Executive:** PDF mensal gerado automaticamente.
 
 ### Fase 4: Qualidade Total
 
-**Objetivo:** Blindar o sistema contra regressões.
+**Objetivo:** Robustez industrial.
 
-- [ ] Implementar testes automatizados (BDD/TDD).
-- [ ] Validar performance com grande volume de dados.
-
-## Backlog
-
-### Análise de Dados (Pendente)
-
-- [ ] Inspecionar `data/sicoob_*.pdf` e avaliar complexidade de extração.
-
-### Definições do Obsidian (Pendente)
-
-- [ ] Pesquisar padrões de gerência financeira no Obsidian (Community Standards).
+- [ ] Testes de carga (10k+ transações).
+- [ ] CI/CD para validar novos adaptadores da comunidade.
