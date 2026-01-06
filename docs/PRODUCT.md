@@ -1,68 +1,81 @@
 # Product Specification
 
-## Visão do Produto
+## A Visão: Soberania Financeira via Stewardship
 
-**Finance Vault** é um ecossistema de ferramentas modulares que permite a "Jardineiros Digitais" e entusiastas da soberania de dados gerenciar suas finanças pessoais utilizando notas Markdown (Obsidian) como banco de dados primário.
+**Finance Vault** é o sistema operacional para sua soberania financeira. Ele rejeita a ideia de apps "mágicos" que vendem seus dados em troca de gráficos bonitos. Em vez disso, propõe um modelo de **Digital Stewardship** (Zelo Digital).
 
-A filosofia central é **"File over App"**: seus dados financeiros não devem ficar presos em um aplicativo proprietário ou em um banco de dados opaco. Eles devem ser arquivos de texto simples, legíveis por humanos e processáveis por máquinas, sobrevivendo a qualquer software específico.
+### A Filosofia do Steward
+
+1. **Possessão Radical:** Seus dados são arquivos texto (Markdown). Eles vivem no seu disco, não na nuvem de terceiros.
+2. **O Contrato de Zelo:** Você aceita o papel de "Jardineiro" (Steward). Você é responsável por alimentar o sistema (Input).
+3. **A Garantia de Valor:** Em troca do seu zelo, o sistema garante uma "Segunda Memória" financeira completa. Se o dado entrou, o insight sai. Sem configuração, sem atrito.
 
 ## Personas
 
-### 1. O Jardineiro Digital (Primary)
+### 1. O Steward Soberano (Core)
 
-- **Perfil:** Usuário avançado do Obsidian, provavelmente usa métodos como Zettelkasten ou PARA. Valoriza a posse dos dados e a longevidade dos arquivos.
-- **Dores:** Apps de finanças são silos fechados. Exportar CSVs e importar manualmente é trabalhoso e propenso a erros (duplicatas).
-- **Objetivo:** Ter um fluxo automatizado onde o extrato do banco vira notas no seu "Second Brain" sem atrito.
+- **Quem é:** Alguém que cansou de apps que morrem, mudam o preço ou vendem dados. Quer controle total (CFO da própria vida).
+- **Comportamento:** Aceita rodar um script semanalmente ("Rito de Atualização") em troca da paz de espírito de ver seu Patrimônio Líquido consolidado instantaneamente.
+- **Desejo:** "Eu cuido da entrada (CSV), o sistema cuida da saída (Dashboard)."
 
-### 2. O Entusiasta Unix (Secondary)
+## Core Domains
 
-- **Perfil:** Desenvolvedor ou Sysadmin que adora CLI e automação. Prefere scripts e pipelines a GUIs pesadas.
-- **Dores:** As ferramentas existentes exigem servidores, bancos de dados SQL/Docker, o que é *overkill* para finanças pessoais.
-- **Objetivo:** `cat nubank.csv | finance-vault import`, simples e direto.
+O sistema cobre os três pilares da saúde financeira:
 
-### 3. O CFO Familiar/Corporativo (Advanced)
+### 1. Transações (O Fluxo)
 
-- **Perfil:** Gerencia finanças de múltiplas pessoas ou entidades (ex: Família, Pequena Empresa).
-- **Dores:** Misturar gastos pessoais com corporativos. Falta de rastreabilidade de quem gastou o que.
-- **Objetivo:** Uma única "Verdade" (Vault) onde gastos de João, Maria e da Empresa Lda coexistem organizadamente.
+O registro imutável do passado.
+
+- **Schema Canônico:** Padronização agnóstica de bancos.
+- **Output:** Fluxo de Caixa, Categorização, Busca Rápida.
+
+### 2. Investimentos (O Patrimônio)
+
+O monitoramento do futuro.
+
+- **Entidades:** Ativos (Ações, ETFs, Fundos, Renda Fixa).
+- **Schema:** Ticker, Quantidade, Preço Médio, Cotação Atual (via Enrichers).
+- **Output:** Alocação de Ativos, Evolução do Patrimônio Líquido.
+
+### 3. Metas (O Propósito)
+
+A razão de acumular.
+
+- **Entidades:** Objetivos (Viagem, Aposentadoria, Compra).
+- **Conexão:** Vincula *contas* ou *investimentos* a *metas*.
+- **Output:** Barra de Progresso, Estimativa de Conclusão.
 
 ## Canonical Transaction Schema
 
-Para garantir que o sistema seja agnóstico ao banco (Nubank, Sicoob, Inter, etc), todos os adaptadores devem converter os dados brutos para este formato canônico antes de qualquer processamento.
+Para garantir a perenidade, todos os adaptadores convertem dados brutos para este formato universal.
 
 ```json
 {
-  "id": "string",          // UUID ou Hash determinístico único da transação
-  "date": "string",        // Data ISO 8601 (YYYY-MM-DD)
-  "amount": "number",      // Valor numérico (negativo para saídas, positivo para entradas)
-  "currency": "string",    // Código ISO 4217 (BRL, USD, EUR) - Default: BRL
-  "description": "string", // Descrição original ou saneada da transação
-  "category": "string",    // Categoria para agrupamento (Opcional, null inicialmente)
-  "tags": "string[]",      // Tags para organização flexível (Ex: #nubank, #alimentacao)
-  "account": "string",     // Identificador da conta de origem (Ex: "nubank-pf")
-  "owner": "string",       // [NOVO] Quem realizou/é responsável (Ex: "joao")
-  "ledger": "string",      // [NOVO] Contexto/Livro Razão (Ex: "pessoal", "familia", "empresa-x")
-  "metadata": "object"     // Dados extras específicos da fonte
+  "id": "string",          // UUID Determinístico
+  "date": "string",        // YYYY-MM-DD
+  "amount": "number",      // Valor (Negativo = Saída)
+  "currency": "string",    // BRL, USD
+  "description": "string", // Descrição original
+  "category": "string",    // Opcional
+  "tags": "string[]",      // Ex: ["#nubank", "#lazer"]
+  "account": "string",     // Ex: "nubank-pf"
+  "shards": {              // [NOVO] Stewardship Context
+      "owner": "string",   // Ex: "joao"
+      "ledger": "string"   // Ex: "familia"
+  },
+  "metadata": "object"     // Dados crus para auditoria
 }
 ```
 
-### Exemplo de Objeto Canônico
+## Investment Schema (Draft)
 
 ```json
 {
-  "id": "68136dee-6f70-4842-aa8d-2f4a72fbbe23",
-  "date": "2025-05-01",
-  "amount": 8.00,
-  "currency": "BRL",
-  "description": "Transferência recebida pelo Pix - LUMA S RODRIGUES",
-  "category": null,
-  "tags": ["nubank", "transferencia"],
-  "account": "nubank",
-  "owner": "joao",
-  "ledger": "familia",
-  "metadata": {
-    "bank_id": "0001",
-    "raw_desc": "Transferência recebida pelo Pix - LUMA S RODRIGUES ARAUJO..."
-  }
+  "asset_id": "string",    // Ticker ou ID único (HGLG11)
+  "type": "string",        // FII, STOCK, FIXED
+  "quantity": "number",    // Posição atual
+  "average_price": "number",
+  "current_price": "number", // Atualizado via Enrichment
+  "last_update": "datetime"
 }
 ```
