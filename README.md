@@ -1,79 +1,63 @@
 # Finance Vault 🏦
 
-> **"File over App"**: Sua vida financeira em texto plano, auditável e sob seu controle.
+> **"Soberania Financeira que funciona."**
+> O Sistema Operacional para quem quer ser o CFO da própria vida.
 
 [![License](https://img.shields.io/github/license/aretw0/finance-vault.svg)](LICENSE)
 
-O **Finance Vault** é um ecossistema de ferramentas modulares projetado para ingerir, processar e armazenar transações financeiras em notas Markdown (Obsidian) com frontmatter estruturado. Ele segue a **Filosofia Unix**: cada componente faz uma única coisa bem feita, conectados por pipelines.
+Finance Vault não é apenas um software, é uma filosofia de **Digital Stewardship** (Zelo Digital). Centralize sua vida financeira em arquivos que você realmente possui.
 
-## 🌟 Destaques
+## 🌟 A Promessa do Steward
 
-- **Soberania de Dados**: Nada de bancos de dados proprietários ou APIs fechadas. Seus dados são arquivos.
-- **Transacional e Seguro**: Utiliza [Loam](https://github.com/aretw0/loam) como engine de armazenamento (Git + Markdown).
-- **Agnóstico**: Scripts adaptadores convertem CSV/OFX/PDF de qualquer banco para um formato canônico.
-- **Multi-Tenant**: Suporte nativo para múltiplos usuários (ex: casal) e múltiplos contextos (ex: pessoal, empresa) no mesmo cofre.
-- **Pipeline-Driven**: Automação via CLI. `cat extrato.csv | adapter | loader`.
+1. **File over App:** Seus dados são arquivos texto. Se este software desaparecer amanhã, seus dados continuam legíveis.
+2. **Observabilidade (Em Breve):** A meta é clara: ao importar seus dados, gráficos de Fluxo de Caixa, Patrimônio e Metas devem emergir automaticamente, sem configuração manual.
+3. **Auditoria Total:** Cada centavo tem um rastro (UUID) e um dono (Owner).
 
-## 🛠️ Arquitetura
+## 🛠️ Como funciona?
 
-O sistema opera em um fluxo linear:
+Você é o Jardineiro (Steward). O Sistema é a Máquina.
 
-```mermaid
-graph LR
-    Input[Extrato Bancário] -->|Adapter| Canonical{Objeto Canônico}
-    Canonical -->|Enricher*| Enriched{Objeto Enriquecido}
-    Enriched -->|Loader| Vault[(Markdown Vault)]
-```
+1. **Input (Seu Trabalho):** Você joga os extratos (CSV, PDF, etc) na pasta `inbox/`.
+2. **Process (O Sistema):** Você roda o script de "jardinagem" (pipeline).
 
-*Para mais detalhes, consulte a [Documentação Técnica](docs/TECHNICAL.md) e a [Especificação do Produto](docs/PRODUCT.md).*
+    ```powershell
+    ./pipeline.ps1 # ou o comando configurado
+    ```
 
-## 🚀 Como Começar
+3. **Output (O Prêmio):** Você abre o Obsidian e vê:
+    - Quanto gastou em IFood.
+    - Quanto falta para a viagem da Europa (Metas).
+    - A evolução da sua carteira de Investimentos.
+
+## 📂 Cobertura (Visão)
+
+| Domínio | O que ele rastreia? | O que ele entrega? |
+| :--- | :--- | :--- |
+| **Transações** | Gastos diários, salário, pix. | Fluxo de Caixa e Balanço Mensal. |
+| **Investimentos** | Ações, Fundos, Renda Fixa. | Gráfico de Alocação e Evolução Patrimonial. |
+| **Metas** | Objetivos futuros. | Barra de progresso e projeção de data. |
+
+## 🚀 Começando
 
 ### Pré-requisitos
 
-- **PowerShell Core (pwsh)**: Recomendado v7+. (Linux/macOS/Windows)
-- **Loam CLI**: Necessário para persistência dos dados.
+- **PowerShell Core (pwsh)**
+- **Obsidian** (Para visualizar os dashboards)
 
 ### Instalação
-
-Clone o repositório:
 
 ```bash
 git clone https://github.com/seu-user/finance-vault.git
 cd finance-vault
-loam init . # Inicializa o vault local
+./setup.ps1 # Prepara o terreno
 ```
 
-### Uso Básico
+## 📚 Documentação Oficial
 
-O fluxo padrão envolve invocar um **Adaptador** e passar o resultado para o **Loader** (`Save-ToVault`).
-
-#### Exemplo: Importando Nubank
-
-```powershell
-# Sintaxe: Adapter | Loader
-./src/adapters/nubank/Get-NubankTransactions.ps1 -Path "nubank_maio.csv" -Owner "joao" -Ledger "pessoal" | ./src/utils/Save-ToVault.ps1
-```
-
-Isso criará arquivos em: `vault/pessoal/joao/2025/05/UUID.md`.
-
-## 📂 Estrutura do Projeto
-
-- `src/adapters/`: Scripts de leitura de fontes (Nubank, etc).
-- `src/utils/`: Scripts utilitários (Loader).
-- `docs/`: Documentação de arquitetura e planejamento.
-- `verify_pipeline.ps1`: Script de verificação E2E.
-
-## 🎨 Live Showcase
-
-Explore o diretório `showcase/` para ver exemplos prontos de visualização:
-
-- **`Dashboard.md`**: Painel nativo usando *Embedded Queries* (Zero plugins).
-- **`Financial.base`**: Tabela de dados nativa (novo recurso "Bases" do Obsidian 1.9+).
-- **`Dashboard_Canvas.canvas`**: Um quadro visual organizando metas e dados.
-- **`Dashboard_Dataview.md`**: Um painel com somatórios e tabelas dinâmicas (Requer plugin Dataview).
-- **`transactions/`**: Exemplos de notas transacionais com frontmatter completo.
+- [Manual do Steward (Product Spec)](docs/PRODUCT.md): Entenda a filosofia.
+- [Roadmap (Planning)](docs/PLANNING.md): O que estamos construindo.
+- [Technical Guide](docs/TECHNICAL.md): Para quem quer abrir o capô.
 
 ## 🤝 Contribuindo
 
-Verifique o [Roadmap](docs/PLANNING.md) para ver as próximas tarefas. Pull Requests para novos adaptadores são bem-vindos!
+Pull Requests são bem-vindos! Verifique o [Roadmap](docs/PLANNING.md) para ver onde precisamos de ajuda.
