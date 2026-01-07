@@ -8,7 +8,7 @@ The user explicitly requested that `finance-vault` serve as an example for futur
 
 ### The Layered Design
 
-```
+```text
 /pkg
   /vault       <-- THE REUSABLE ENGINE (The "ORM")
      - Repository (Generic Interface)
