@@ -62,7 +62,7 @@ Para garantir interoperabilidade e não ficarmos "presos" a arquivos, o binário
 
 ### Stack Tecnológico (Target Architecture)
 
-1. **Engine:** Go (Binary único `finance-vault`).
+1. **Engine:** Go (Binary único `fiscus`).
     - *Why?* Schemas estritos, performance e distribuição simples.
 2. **Storage Layer:** [Loam](https://github.com/aretw0/loam) (Embedded Library).
     - *Why?* Git-powered transactionality sem depender de scripts externos.

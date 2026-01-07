@@ -4,7 +4,7 @@
 
 **Yes, we are building a "Static Finance Generator".**
 
-Similar to how tools like **Hugo** or **Jekyll** take raw content (Markdown) and turn it into a Website (HTML), `finance-vault` takes raw data (CSV) and turns it into a Knowledge Base (Obsidian Vault).
+Similar to how tools like **Hugo** or **Jekyll** take raw content (Markdown) and turn it into a Website (HTML), `fiscus` takes raw data (CSV) and turns it into a Knowledge Base (Obsidian Vault).
 
 * **The Trap (Reinventing Database):** If we try to implement indexes, b-trees, or complex query languages on top of text files, we are reinventing SQLite badly. We must avoid this.
 * **The Sweet Spot:** Our "Database" features should be limited to what the file system offers:
@@ -47,14 +47,14 @@ We are not building a database; we are building a **Structured Data Projector**.
 
 * **Model (Storage):** Loam (Git + Filesystem).
 * **View (UI):** Obsidian (Markdown Renderer).
-* **Controller (Logic):** `finance-vault` (Go Binary).
+* **Controller (Logic):** `fiscus` (Go Binary).
 
 ## 4. Avoiding Reinvention (Interoperability)
 
 **Principle: Use "Plain Text Standards" wherever possible.**
 
 * **Storage:** Markdown + YAML Frontmatter. (Obsidian, Jekyll, Hugo compatible).
-* **Config:** `finance-vault.yaml` (Standard).
+* **Config:** `fiscus.yaml` (Standard).
 * **Input:** OFX (Banking Standard) and CSV.
 * **Number Format:** Decimal (Standard).
 

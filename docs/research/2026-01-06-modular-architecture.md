@@ -1,10 +1,10 @@
 # Research: Modular Architecture & Lifecycle
 
-This document addresses how `finance-vault` matures from a script-collection into a reusable **Platform for Sovereign Data**.
+This document addresses how `fiscus` matures from a script-collection into a reusable **Platform for Sovereign Data**.
 
 ## 1. Modularity: "Vault" as a Database
 
-The user explicitly requested that `finance-vault` serve as an example for future "Vault Apps". To achieve this, we must strictly separate **Infrastructure** (CRUD) from **Domain** (Finance).
+The user explicitly requested that `fiscus` serve as an example for future "Vault Apps". To achieve this, we must strictly separate **Infrastructure** (CRUD) from **Domain** (Finance).
 
 ### The Layered Design
 
@@ -47,7 +47,7 @@ In a file-based system, a schema change (e.g., renaming `cost` to `amount`) requ
 ### Seeding (Validation)
 
 Seeding is critical for testing Dashboards without waiting 1 year to accumulate data.
-`finance-vault seed --scenario=debt-crisis`
+`fiscus seed --scenario=debt-crisis`
 
 * Generates 500 fake Markdown files.
 * Allows dev/user to test the UI immediately.

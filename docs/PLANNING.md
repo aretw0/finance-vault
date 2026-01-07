@@ -37,7 +37,7 @@ Este documento guia a evolução do **Fiscus**, focando na entrega de valor ao S
 
 - [ ] **Erros Humanos:** Melhorar logs do Pipeline. O erro deve dizer "Coluna X faltando no arquivo Y" e não "Null Reference Exception".
 - [ ] **Idempotência Real:** Garantir que rodar o mesmo arquivo 10x não gere duplicatas nem sujeira.
-- [ ] **Verificação de Saúde:** Script `verify_vault.ps1` que checa integridade dos links e schemas.
+- [ ] **Verificação de Saúde:** Comando `fiscus check` que checa integridade dos links e schemas.
 
 #### 2.2. Domínio: Investimentos (Novo Pilar)
 

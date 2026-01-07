@@ -19,7 +19,7 @@ We treat manual entries not as "Final Truth" but as "Intention" or "Drafts".
     * *Result:* User sees the expense immediately.
 3. **The Auto-Import:** Days later, the CSV runs. It creates a definitive note in `vault/.../uuid-123.md`.
 4. **Reconciliation (The Ceremony):**
-    * A script `finance-vault reconcile` runs.
+    * A script `fiscus reconcile` runs.
     * It scans `inbox/manual` and matches against recent `vault/` entries (Fuzzy match on Amount + Date Window).
     * **Detects:** "Found Manual Entry (-50.00) matching Imported Entry (-50.00)".
     * **Action:**
@@ -66,7 +66,7 @@ Since `Fiscus` uses `Loam` (Git) natively, we can offer "Financial Multiverses" 
 1. **Start Simulation:**
 
     ```powershell
-    finance-vault sim start "buying-porsche"
+    fiscus sim start "buying-porsche"
     # System runs: git checkout -b sim/buying-porsche
     ```
 
@@ -78,14 +78,14 @@ Since `Fiscus` uses `Loam` (Git) natively, we can offer "Financial Multiverses" 
     * *Option A (Abort):* "Too expensive."
 
         ```powershell
-        finance-vault sim close
+        fiscus sim close
         # git checkout main && git branch -D sim/buying-porsche
         ```
 
     * *Option B (Commit/Merge):* "I actually did it."
 
         ```powershell
-        finance-vault sim merge
+        fiscus sim merge
         # git checkout main && git merge sim/buying-porsche
         ```
 

@@ -2,12 +2,12 @@
 
 ## 1. The Core Question
 
-**Should `finance-vault` be a File-System App or a Database App?**
+**Should `fiscus` be a File-System App or a Database App?**
 The user response is: **Both.** Or at least, it should allow the choice.
 
 ## 2. Strategy: Hexagonal Architecture (Ports & Adapters)
 
-To ensure `finance-vault` is not "hard-coded" to files, we must adopt a strict **Hexagonal Architecture**.
+To ensure `fiscus` is not "hard-coded" to files, we must adopt a strict **Hexagonal Architecture**.
 
 ### The Layers
 
@@ -41,8 +41,8 @@ If we force Loam to support SQL, we face the "Impedance Mismatch":
 **Loam should stay focused on "Git/FS Persistence".**
 It should be the "Best in Class" adapter for file-based apps.
 
-If `finance-vault` needs SQL, it should build its own `pkg/adapters/postgres`.
-**However**, `finance-vault` can define a **Sync/Projection** features:
+If `fiscus` needs SQL, it should build its own `pkg/adapters/postgres`.
+**However**, `fiscus` can define a **Sync/Projection** features:
 
 * *Master:* Loam (Files).
 * *Read Replica:* Postgres (for Metabase/Grafana).
@@ -81,6 +81,6 @@ If the user chooses SQL, they lose "Free Git Branching".
 
 ## 5. Conclusion
 
-* **Interoperability:** Achieved via Hexagonal Interfaces in `finance-vault`.
+* **Interoperability:** Achieved via Hexagonal Interfaces in `fiscus`.
 * **Loam:** Stays pure (Git/FS).
 * **Project Structure:** Explicit `pkg/ports` and `pkg/adapters`.

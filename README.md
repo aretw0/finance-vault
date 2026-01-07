@@ -1,9 +1,9 @@
-# Fiscus (formerly Finance Vault) 🏛️
+# Fiscus 🏛️
 
 > **"Soberania Financeira que funciona."**
 > O Sistema Operacional para quem quer ser o CFO da própria vida.
 
-[![License](https://img.shields.io/github/license/aretw0/finance-vault.svg)](LICENSE)
+[![License](https://img.shields.io/github/license/aretw0/fiscus.svg)](LICENSE)
 
 **Fiscus** não é apenas um software, é uma filosofia de **Digital Stewardship** (Zelo Digital). Centralize sua vida financeira em arquivos que você realmente possui.
 
@@ -47,8 +47,8 @@ Você é o Jardineiro (Steward). O Sistema é a Máquina.
 ### Instalação
 
 ```bash
-git clone https://github.com/seu-user/finance-vault.git
-cd finance-vault
+git clone https://github.com/aretw0/fiscus.git
+cd fiscus
 ./setup.ps1 # Prepara o terreno
 ```
 
