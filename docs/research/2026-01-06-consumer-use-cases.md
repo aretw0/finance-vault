@@ -1,6 +1,6 @@
 # Research: Advanced User Scenarios
 
-This document analyzes high-value use cases that go beyond simple "Importer" logic, focusing on how a **Stewardship** based system allows for Manual Entry, Complex Credit Management, Simulations, and Long-Term Liabilities.
+This document analyzes high-value use cases that go beyond simple "Importer" logic, focusing on how a **Stewardship** based system allows for Manual Entry, Complex Credit Management, Simulations, Long-Term Liabilities, and Tax Obligations.
 
 ## 1. Manual vs. Automated ( The "Proactive Steward" Paradox)
 
@@ -116,4 +116,31 @@ We treat a Loan exactly like an Investment Account, but with a **negative balanc
     * Mortgage Account: `-400,000 + 2,500 = -397,500`.
     * Net Worth increases by +2,500 (You are "richer" because you owe less).
 
-**Stewardship Note:** Updating the split (Interest vs Principal) usually requires checking the bank statement. If the Steward wants simplicity, they can treat the whole payment as Expense (simpler, but undervalues Net Worth) OR simply update the `mortgage-house` balance manually once a year to correct the drift. Ideally, the system supports updated via Statements (Input-Only).
+---
+
+## 5. Tax Obligations (The "IRPF" Shadow)
+
+**The Challenge:** In Brazil (and many jurisdictions), investment tracking is useless if it doesn't track **Average Price (Preço Médio)** for tax calculations. A dashboard showing "+10% gain" is misleading if the user doesn't know the tax liability upon selling.
+
+### Proposed Capabilities
+
+1. **Cost Basis Tracking:** The system must track the weighted average price of every asset.
+2. **Tax Events:** When selling an asset, the system calculates `(Sell Price - Avg Price) * Qty` to determine Profit/Loss.
+3. **Report:** A view `IRPF Auxiliar` that lists:
+    * Total Sales in Month.
+    * Taxable Profit vs Exempt Profit (e.g., sells under 20k/month for stocks).
+
+**Stewardship Win:** This eliminates the need for a parallel Excel sheet for taxes, arguably the biggest pain point for investors.
+
+---
+
+## 6. Subscription Management (The Vampires)
+
+**The Challenge:** Users lose track of recurring small charges.
+
+### Solution: Recurrency Auditing
+
+A simple dashboard query that groups transactions by `Description` and `Amount` variance < 5%.
+
+* "You have paid 'Netflix' R$ 55.90 for the last 6 months."
+* **Projected Burn:** "Your fixed costs are R$ 3.000/mo before you even buy food."
