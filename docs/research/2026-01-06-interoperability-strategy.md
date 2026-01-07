@@ -47,7 +47,7 @@ If `finance-vault` needs SQL, it should build its own `pkg/adapters/postgres`.
 * *Master:* Loam (Files).
 * *Read Replica:* Postgres (for Metabase/Grafana).
 
-## 4. Proposed Architecture for Finance Vault
+## 4. Proposed Architecture for Fiscus
 
 We will design the Go Application to be **Backend Agnostic** via dependency injection.
 

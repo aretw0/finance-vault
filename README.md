@@ -5,7 +5,7 @@
 
 [![License](https://img.shields.io/github/license/aretw0/finance-vault.svg)](LICENSE)
 
-Finance Vault não é apenas um software, é uma filosofia de **Digital Stewardship** (Zelo Digital). Centralize sua vida financeira em arquivos que você realmente possui.
+**Fiscus** não é apenas um software, é uma filosofia de **Digital Stewardship** (Zelo Digital). Centralize sua vida financeira em arquivos que você realmente possui.
 
 ## 🌟 A Promessa do Steward
 

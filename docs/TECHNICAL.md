@@ -40,7 +40,7 @@ O [Loam](https://github.com/aretw0/loam) é o driver que garante:
 
 ## Camada de Visualização (The Garden)
 
-Diferente de sistemas que exigem que você "crie relatórios", o Finance Vault **injeta** inteligência na leitura.
+Diferente de sistemas que exigem que você "crie relatórios", o **Fiscus** **injeta** inteligência na leitura.
 
 ### Arquitetura Orientada a Propriedades
 

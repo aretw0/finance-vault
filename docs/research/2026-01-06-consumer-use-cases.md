@@ -59,7 +59,7 @@ Treat the Credit Card not just as a category, but as a distinct **Ledger Entity*
 
 ### Proposed Solution: Git Branching as a Feature
 
-Since `Finance Vault` uses `Loam` (Git) natively, we can offer "Financial Multiverses" nearly for free.
+Since `Fiscus` uses `Loam` (Git) natively, we can offer "Financial Multiverses" nearly for free.
 
 #### Workflow
 

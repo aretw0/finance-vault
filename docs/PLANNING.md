@@ -1,6 +1,6 @@
 # Roadmap & Planning
 
-Este documento guia a evolução do **Finance Vault**, focando na entrega de valor ao Steward (o usuário).
+Este documento guia a evolução do **Fiscus**, focando na entrega de valor ao Steward (o usuário).
 
 ## Roadmap
 
