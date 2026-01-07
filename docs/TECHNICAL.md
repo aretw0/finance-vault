@@ -67,4 +67,19 @@ Para garantir interoperabilidade e não ficarmos "presos" a arquivos, o binário
 2. **Storage Layer:** [Loam](https://github.com/aretw0/loam) (Embedded Library).
     - *Why?* Git-powered transactionality sem depender de scripts externos.
 3. **Data Format:** Markdown + YAML Frontmatter.
-4. **UI:** Obsidian (O Renderizador).
+
+### Modularity & Reuse (The "Vault Pattern")
+
+O código será estruturado para separar infraestrutura de domínio, servindo de exemplo para outros sistemas "loam-based".
+
+1. `pkg/vault` (Generic Infrastructure):
+    - Responsável por CRUD de Markdown, interação com Loam/Git e File Locking.
+    - **Reutilizável:** Poderia ser o backend de um `health-vault` ou `notes-vault`.
+2. `pkg/finance` (Domain):
+    - Regras de negócio (Cálculo de Imposto, Validação de Transação).
+
+### Lifecycle Strategy
+
+- **Migrations:** Em vez de scripts SQL, usamos "Mass Rewrites" atômicos via Git commit. Se a migração falhar, `git revert` salva o dia.
+- **Seeding:** O binário incluirá geradores de dados (`seeders`) para popular um vault de teste, permitindo validar dashboards instantaneamente.
+- **External Schemas:** A partir das Structs Go, geraremos **JSON Schemas** para que editores (VSCode/Obsidian) ofereçam autocomplete aos usuários.
