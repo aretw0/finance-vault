@@ -33,7 +33,7 @@ Este documento guia a evolução do **Finance Vault**, focando na entrega de val
 
 #### 2.2. Domínio: Investimentos (Novo Pilar)
 
-- [ ] **Schema Definition:** Formalizar o JSON de Ativos (Ações, Fundos, Tesouro).
+- [ ] **Schema Definition:** Formalizar o JSON de Ativos (Ações, Fundos, Tesouro), incluindo campos para **Preço Médio** (Tax Readiness).
 - [ ] **Adapter B3/CEI:** Criar importador para área logada da B3 (ou CSVs de corretoras).
 - [ ] **Enricher de Cotação:** Script opcional que busca preço atual (Yahoo Finance/API).
 - [ ] **View:** Dashboard de Patrimônio Líquido.
@@ -50,6 +50,7 @@ Este documento guia a evolução do **Finance Vault**, focando na entrega de val
 
 - [ ] **Templates Dinâmicos:** Usar `[shards.ledger: "pessoal"]` para criar visões automáticas.
 - [ ] **Relatórios Executive:** PDF mensal gerado automaticamente.
+- [ ] **Audit de Assinaturas:** Detecção e projeção automática de custos recorrentes.
 
 ### Fase 4: Advanced Stewardship (Futuro)
 
