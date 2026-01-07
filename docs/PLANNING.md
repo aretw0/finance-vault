@@ -20,6 +20,14 @@ Este documento guia a evolução do **Finance Vault**, focando na entrega de val
 - [x] Schema Canônico V1.
 - [x] Showcase inicial com Dashboards estáticos.
 
+### Fase 1.5: Maturidade Técnica (Migration to Go)
+
+**Objetivo:** Sair de scripts soltos para um binário único e robusto.
+
+- [ ] **App Go:** Portar lógica de pipeline para `main.go`.
+- [ ] **Loam Integration:** Usar `loam` como biblioteca Go nativa.
+- [ ] **Strict Typing:** Implementar Structs para validação de Schema (Transações e Relacionamentos).
+
 ### Fase 2: Stewardship & Experience (Atual)
 
 **Objetivo:** Transformar o "uso de scripts" em uma experiência de "Jardinagem Digital" segura e recompensadora.
