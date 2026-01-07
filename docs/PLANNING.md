@@ -57,7 +57,8 @@ Este documento guia a evolução do **Finance Vault**, focando na entrega de val
 
 - [ ] **Reconciliação Manual/Auto:** Mecanismo para fundir entradas manuais (`inbox/`) com importações bancárias, evitando duplicatas.
 - [ ] **Simulações (Multiverso):** Abstração de CLI para criar `branches` git de simulação ("E se eu comprar esse carro?").
-- [ ] **Gestão de Cartão:** Suporte nativo a transfers e fechamento de fatura (Liability Ledger).
+- [ ] **Gestão de Cartão:** Suporte nativo a transfers e fechamento de fatura (Short-term Liability).
+- [ ] **Financiamentos (Dívidas):** Rastreamento de saldo devedor e amortização (Long-term Liability).
 
 ### Fase 5: Qualidade Total
 

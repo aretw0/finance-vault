@@ -1,6 +1,6 @@
 # Research: Advanced User Scenarios
 
-This document analyzes high-value use cases that go beyond simple "Importer" logic, focusing on how a **Stewardship** based system allows for Manual Entry, Complex Credit Management, and Simulations.
+This document analyzes high-value use cases that go beyond simple "Importer" logic, focusing on how a **Stewardship** based system allows for Manual Entry, Complex Credit Management, Simulations, and Long-Term Liabilities.
 
 ## 1. Manual vs. Automated ( The "Proactive Steward" Paradox)
 
@@ -30,7 +30,7 @@ We treat manual entries not as "Final Truth" but as "Intention" or "Drafts".
 
 ---
 
-## 2. Managing Credit Cards (Liabilities)
+## 2. Managing Credit Cards (Short-term Liabilities)
 
 **The Challenge:** Credit cards are debt instruments. The expense happens at $T_0$, but the cash leaves the account at $T_{payment}$.
 
@@ -90,3 +90,30 @@ Since `Finance Vault` uses `Loam` (Git) natively, we can offer "Financial Multiv
         ```
 
 **UI Considerations:** The Obsidian status bar can be configured (via plugin or just Git status) to show `[SIMULATION MODE]`, warning the user they are not looking at reality.
+
+---
+
+## 4. Loans & Financing (Long-term Liabilities)
+
+**The Challenge:** Mortgages, Car Loans, and Personal Loans are often ignored in cashflow apps, making the "Net Worth" deceptive (e.g., claiming you own a 500k house but ignoring the 400k debt).
+
+### Proposed Solution: The Liability Account
+
+We treat a Loan exactly like an Investment Account, but with a **negative balance**.
+
+#### The Model
+
+1. **Initialization:**
+    * User creates `assets/liabilities/mortgage-house.md`.
+    * Initial Balance: `-R$ 400,000.00`.
+2. **Monthly Payment (The split):**
+    * User pays R$ 4,000.00 to the bank.
+    * **Split Transaction:**
+        * R$ 1,500 (Interest) -> **Expense** (Money gone forever).
+        * R$ 2,500 (Principal) -> **Transfer** to `mortgage-house`.
+3. **Result:**
+    * Checking Account: `-4000`.
+    * Mortgage Account: `-400,000 + 2,500 = -397,500`.
+    * Net Worth increases by +2,500 (You are "richer" because you owe less).
+
+**Stewardship Note:** Updating the split (Interest vs Principal) usually requires checking the bank statement. If the Steward wants simplicity, they can treat the whole payment as Expense (simpler, but undervalues Net Worth) OR simply update the `mortgage-house` balance manually once a year to correct the drift. Ideally, the system supports updated via Statements (Input-Only).
