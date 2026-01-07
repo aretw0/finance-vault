@@ -49,7 +49,16 @@ A visualização **NUNCA** deve depender de onde o arquivo está (pastas), mas s
 | Abordagem | Query | Por que usamos? |
 | :--- | :--- | :--- |
 | **Old (Frágil)** | `path:"finance"` | Quebra se você mover a nota. |
-| **Stewardship (Robusto)** | `[shards.ledger: "pessoal"]` | Funciona em qualquer lugar do vault. |
+
+### Arquitetura de Software (Hexagonal)
+
+Para garantir interoperabilidade e não ficarmos "presos" a arquivos, o binário Go seguirá o padrão **Ports and Adapters**:
+
+1. **Domain (Core):** Lógica pura (Structs, Tax Rules). Desconhece onde o dado vive.
+2. **Ports (Interfaces):** `type Repository interface { Save, Get... }`.
+3. **Adapters (Infrastructure):**
+    - **Loam Adapter (Default):** Implementa a interface usando Git/FS.
+    - **SQL Adapter (Future):** Permite persistir em Postgres/SQLite se desejado.
 
 ### Stack Tecnológico (Target Architecture)
 
