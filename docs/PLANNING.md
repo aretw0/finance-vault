@@ -22,7 +22,7 @@ Este documento guia a evolução do **Finance Vault**, focando na entrega de val
 
 ### Fase 1.5: Maturidade Técnica (Migration to Go)
 
-**Objetivo:** Sair de scripts soltos para um binário único e robusto.
+**Objetivo:** Sair de scripts soltos para um binário único e robusto. **Isso é pré-requisito para Dashboards complexos (Investimentos/Taxas) que exigem validação estrita.**
 
 - [ ] **App Go:** Portar lógica de pipeline para `main.go`.
 - [ ] **Loam Integration:** Usar `loam` como biblioteca Go nativa.

@@ -31,11 +31,11 @@ O registro imutável do passado.
 
 ### 2. Investimentos (O Patrimônio)
 
-O monitoramento do futuro.
+O monitoramento do futuro e dos deveres (Fisco).
 
 - **Entidades:** Ativos (Ações, ETFs, Fundos, Renda Fixa).
-- **Schema:** Ticker, Quantidade, Preço Médio, Cotação Atual (via Enrichers).
-- **Output:** Alocação de Ativos, Evolução do Patrimônio Líquido.
+- **Schema:** Ticker, Quantidade, **Preço Médio** (Tax Readiness), Cotação Atual.
+- **Output:** Alocação de Ativos, Evolução do Patrimônio Líquido e **Relatórios de Auxílio IRPF**.
 
 ### 3. Metas (O Propósito)
 
