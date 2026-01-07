@@ -51,8 +51,11 @@ A visualização **NUNCA** deve depender de onde o arquivo está (pastas), mas s
 | **Old (Frágil)** | `path:"finance"` | Quebra se você mover a nota. |
 | **Stewardship (Robusto)** | `[shards.ledger: "pessoal"]` | Funciona em qualquer lugar do vault. |
 
-### Stack Tecnológico
+### Stack Tecnológico (Target Architecture)
 
-1. **Engine:** PowerShell Core (A "Cola" universal).
-2. **Storage:** Markdown + Frontmatter (Longevidade > 50 anos).
-3. **UI:** Obsidian (O Renderizador).
+1. **Engine:** Go (Binary único `finance-vault`).
+    - *Why?* Schemas estritos, performance e distribuição simples.
+2. **Storage Layer:** [Loam](https://github.com/aretw0/loam) (Embedded Library).
+    - *Why?* Git-powered transactionality sem depender de scripts externos.
+3. **Data Format:** Markdown + YAML Frontmatter.
+4. **UI:** Obsidian (O Renderizador).
