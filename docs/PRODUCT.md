@@ -79,3 +79,21 @@ Para garantir a perenidade, todos os adaptadores convertem dados brutos para est
   "last_update": "datetime"
 }
 ```
+
+## Future Domains
+
+### 4. Gestão de Contratos (Em Breve)
+
+- Aluguel, Seguros, Garantias.
+- Notificação de vencimento.
+
+## Oikos Ecosystem (Visão de Longo Prazo)
+
+**Fiscus** é concebido como o primeiro módulo de uma plataforma maior: **Oikos**.
+No futuro, a arquitetura modular (`pkg/vault`) permitirá a criação de outros sistemas soberanos:
+
+- **Oikos Health:** Prontuário médico pessoal.
+- **Oikos Notes:** Knowledge base (Zettelkasten).
+- **Oikos Legal:** Gestão de documentos e contratos.
+
+O objetivo é que, ao dominar o Fiscus, o Steward tenha as ferramentas para gerir toda a sua "Casa Digital" (Oikos).
