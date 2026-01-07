@@ -1,4 +1,4 @@
-# Finance Vault 🏦
+# Fiscus (formerly Finance Vault) 🏛️
 
 > **"Soberania Financeira que funciona."**
 > O Sistema Operacional para quem quer ser o CFO da própria vida.

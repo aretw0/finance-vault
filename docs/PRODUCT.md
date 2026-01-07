@@ -2,7 +2,7 @@
 
 ## A Visão: Soberania Financeira via Stewardship
 
-**Finance Vault** é o sistema operacional para sua soberania financeira. Ele rejeita a ideia de apps "mágicos" que vendem seus dados em troca de gráficos bonitos. Em vez disso, propõe um modelo de **Digital Stewardship** (Zelo Digital).
+**Fiscus** (anteriormente Finance Vault) é o sistema operacional para sua soberania financeira. Ele rejeita a ideia de apps "mágicos" que vendem seus dados em troca de gráficos bonitos. Em vez disso, propõe um modelo de **Digital Stewardship** (Zelo Digital).
 
 ### A Filosofia do Steward
 

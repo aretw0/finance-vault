@@ -2,7 +2,7 @@
 
 ## A Maquinaria de Stewardship
 
-Para cumprir a promessa de "Soberania sem Dor", a arquitetura do **Finance Vault** esconde a complexidade do ETL (Extract, Transform, Load) em pipelines robustos, permitindo que o usuário foque apenas na entrada e saída.
+Para cumprir a promessa de "Soberania sem Dor", a arquitetura do **Fiscus** esconde a complexidade do ETL (Extract, Transform, Load) em pipelines robustos, permitindo que o usuário foque apenas na entrada e saída.
 
 ### Fluxo de Dados (The Value Stream)
 
